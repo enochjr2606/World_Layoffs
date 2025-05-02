@@ -1,0 +1,9 @@
+-- Create a calculated table named 'Date Table'
+Date Table = 
+  CALENDAR(
+      -- Use the earliest date from the 'date' column in 'layoffs_staging2' as the start of the calendar
+      MIN(layoffs_staging2[date]),
+  
+      -- Use the latest date from the 'date' column in 'layoffs_staging2' as the end of the calendar
+      MAX(layoffs_staging2[date])
+)
