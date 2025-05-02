@@ -12,8 +12,7 @@ ________________________________________
 
 ### Overview
 - Provides a high-level summary of layoffs over time.
--Key trends and patterns are visualized to highlight peak periods of layoffs and overall workforce reduction.
-
+- Key trends and patterns are visualized to highlight peak periods of layoffs and overall workforce reduction.
 ![Project Overview](./Images/Overview.png)
 
 ### Company Analysis
