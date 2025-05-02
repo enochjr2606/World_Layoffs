@@ -1,3 +1,4 @@
+
 /* 
   -------------------------------------------------------------------------------
 EXPLORATORY DATA ANALYSIS (EDA) on the 'layoffs_staging2' table to understand layoffs trends and statistics
@@ -24,18 +25,38 @@ FROM world_layoffs.layoffs_staging2
 WHERE percentage_laid_off = 1
 ORDER BY total_laid_off DESC;
 
+
+-- Selects all records from the layoffs_staging2 table where the funds raised are below the average funds raised across the entire table.
+SELECT *
+FROM world_layoffs.layoffs_staging2
+WHERE funds_raised_millions <
+    (
+        SELECT AVG(funds_raised_millions)
+        FROM world_layoffs.layoffs_staging2
+    );
+
+
+-- Get the total laid off
+SELECT SUM(total_laid_off)
+FROM world_layoffs.layoffs_staging2;
+
+-- Get the total company laid off
+SELECT COUNT(DISTINCT(company))
+FROM world_layoffs.layoffs_staging2;
+
 -- Get the total laid off by each company and order by total laid off in descending order
 SELECT company, SUM(total_laid_off)
 FROM world_layoffs.layoffs_staging2
 GROUP BY company
-ORDER BY 2 DESC;
+ORDER BY 2 DESC
+LIMIT 5;
 
 -- Get the earliest and latest dates from the data
 SELECT MIN(`date`), MAX(`date`)
 FROM world_layoffs.layoffs_staging2;
 
 -- Get the total laid off by industry and order by total laid off in descending order
-SELECT industry, SUM(total_laid_off)
+SELECT industry, SUM(total_laid_off) 
 FROM world_layoffs.layoffs_staging2
 GROUP BY industry
 ORDER BY 2 DESC;
@@ -82,7 +103,7 @@ FROM Rolling_Total;
 SELECT company, YEAR(`date`) AS `Year`, SUM(total_laid_off) AS Sum_Total_LaidOff
 FROM world_layoffs.layoffs_staging2
 GROUP BY company, `year`
-ORDER BY 1 ASC;
+ORDER BY 3 DESC;
 
 -- Rank companies by total laid off per year and select top 5 ranked companies per year
 WITH Company_Year (Company, `Year`, Total_laid_off) AS
