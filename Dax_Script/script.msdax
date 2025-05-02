@@ -1,9 +1,114 @@
--- Create a calculated table named 'Date Table'
+-- Create a calculated table named 'Date Table' --
 Date Table = 
   CALENDAR(
-      -- Use the earliest date from the 'date' column in 'layoffs_staging2' as the start of the calendar
+      -- Use the earliest date from the 'date' column in 'layoffs_staging2' as the start of the calendar --
       MIN(layoffs_staging2[date]),
   
-      -- Use the latest date from the 'date' column in 'layoffs_staging2' as the end of the calendar
+      -- Use the latest date from the 'date' column in 'layoffs_staging2' as the end of the calendar --
       MAX(layoffs_staging2[date])
 )
+
+
+-- Extracts the month abbreviation (e.g., Jan, Feb, Mar) from the Date column
+Month = 
+    FORMAT(
+        'Date Table'[Date], "mmm"
+    )
+
+
+-- This calculated column extracts the month number (1 to 12) from the 'Date Table'[Date] column
+Month Number = 
+    MONTH(
+        'Date Table'[Date]
+    )
+
+
+// Create a new column called 'Year' that extracts the year from the 'Date' column in the 'Date Table'
+Year = 
+    FORMAT(
+        'Date Table'[Date], "yyyy"
+    )
+
+
+-- Create a measure to find the industry with the most total layoffs
+Industry With Most Layoffs = 
+    VAR IndustryTable =
+        -- Summarize the data by industry, calculating the total layoffs for each
+        SUMMARIZE(
+            layoffs_staging2,
+            layoffs_staging2[industry],                   -- Group by industry
+            "TotalLayoffs", SUM(layoffs_staging2[total_laid_off])  -- Calculate total layoffs per industry
+        )
+    RETURN
+        -- From the summarized table, get the industry with the highest total layoffs
+        MAXX(
+            TOPN(1, IndustryTable, [TotalLayoffs], DESC), -- Get the top 1 industry by TotalLayoffs
+            layoffs_staging2[industry]                    -- Return the industry name
+        )
+
+
+-- Calculates the Month-To-Date (MTD) total layoffs
+Layoffs MTD = 
+    TOTALMTD(
+        -- Aggregates the total number of people laid off
+        SUM(
+            layoffs_staging2[total_laid_off]
+        ),
+        -- Uses the 'Date Table' to track MTD based on calendar dates
+        'Date Table'[Date]
+    )
+
+
+-- Measure to calculate total layoffs Year-To-Date (YTD)
+Layoffs YTD = 
+    TOTALYTD(
+        -- Aggregates the total number of layoffs
+        SUM(layoffs_staging2[total_laid_off]),
+        
+        -- Uses the 'date' column to determine the YTD period
+        layoffs_staging2[date]
+    )
+
+
+-- Calculates the total number of layoffs for the current month-to-date
+Monthly Layoffs = 
+    CALCULATE(
+        -- Sum of all layoffs
+        SUM(layoffs_staging2[total_laid_off]),
+        
+        -- Filter the data to include only dates within the current month up to the current date (Month-To-Date)
+        DATESMTD(layoffs_staging2[date])
+    )
+
+
+Top Country by Layoffs = 
+    // Create a summary table that groups data by country and calculates the total layoffs per country
+    VAR SummaryTable =
+        SUMMARIZE(
+            layoffs_staging2,                     // Source table
+            layoffs_staging2[country],            // Group by country
+            "TotalLayoffs",                       // New column name
+            SUM(layoffs_staging2[total_laid_off]) // Aggregated total layoffs per country
+        )
+    RETURN
+        // From the summary table, get the country with the highest total layoffs
+        MAXX(
+            TOPN(1, SummaryTable, [TotalLayoffs], DESC), // Get the top 1 country based on TotalLayoffs
+            layoffs_staging2[country]                    // Return the country name
+        )
+
+
+// This DAX measure calculates the total number of unique companies 
+// in the "layoffs_staging2" table by counting distinct values from the "company" column.
+Total Companies = 
+    DISTINCTCOUNT(
+        layoffs_staging2[company]
+    )
+
+
+// This measure calculates the total number of layoffs by summing the values in the 'total_laid_off' column 
+// from the 'layoffs_staging2' table. It aggregates the total number of individuals laid off across all rows.
+Total Layoffs = 
+    SUM(
+        layoffs_staging2[total_laid_off]
+    )
