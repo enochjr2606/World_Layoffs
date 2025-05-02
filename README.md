@@ -5,8 +5,26 @@
 ________________________________________
 📚 
 ## Project Overview
-This project focuses on cleaning and analyzing a global layoffs dataset using SQL. The goal is to transform messy real-world data into a structured format and perform deep exploratory analysis to uncover valuable business insights.
+This project designed to analyze and visualize data on layoffs across various companies and industries. The primary goal is to provide insights into trends, patterns, and underlying factors influencing layoffs, allowing decision-makers to understand the broader impact on the workforce. It focuses on cleaning and analyzing the global layoffs dataset using SQL. The goal is to transform messy real-world data into a structured format and perform deep exploratory analysis to uncover valuable business insights.
 ________________________________________
+
+##Key Visuals in the Power BI Dashboard:
+##Overview
+- Provides a high-level summary of layoffs over time.
+-Key trends and patterns are visualized to highlight peak periods of layoffs and overall workforce reduction.
+
+###Company Analysis
+- Visualizes layoffs by individual company, allowing for comparison across different organizations.
+- Helps identify which companies have experienced the most significant workforce reductions.
+
+###Industry Insight
+- Breaks down layoffs by industry to show which sectors are seeing the most significant impact.
+- Aids in understanding broader market conditions and the impact on specific industries.
+
+###Details
+- Focuses on more granular data, such as layoffs by department, region, or specific time periods.
+- Allows users to explore different aspects of the data, helping to uncover specific patterns and insights.
+  
 🛠️ 
 ## Tools and Technologies
 -	SQL Server / MySQL Workbench
