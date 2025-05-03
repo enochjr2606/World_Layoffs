@@ -30,21 +30,21 @@ ________________________________________
 - Visualizes layoffs by individual company, allowing for comparison across different organizations.
 - Helps identify which companies have experienced the most significant workforce reductions.
 
-![Project Overview](./Images/Company_Analysis.png)
+![Project Overview](./Company_Analysis.png)
 
 🏭
 ### Industry Insight
 - Breaks down layoffs by industry to show which sectors are seeing the most significant impact.
 - Aids in understanding broader market conditions and the impact on specific industries.
 
-![Project Overview](./Images/Industry_Insight.png)
+![Project Overview](./Industry_Insight.png)
 
 🧾
 ### Details
 - Focuses on more granular data, such as layoffs by department, region, or specific time periods.
 - Allows users to explore different aspects of the data, helping to uncover specific patterns and insights.
 
-![Project Overview](./Images/Details.png)
+![Project Overview](./Details.png)
 ________________________________________
 💡 
 ## Key Insights
