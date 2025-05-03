@@ -1,7 +1,6 @@
 💻 
 # World's Layoffs Data Analysis
 
-📑
 ## Table of Contents
 
 - [Project Overview](#project-overview)
