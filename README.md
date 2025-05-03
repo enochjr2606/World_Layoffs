@@ -1,7 +1,21 @@
 💻 
 # World's Layoffs Data Analysis
- 
- 
+
+📑
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Problem Statement](#problem-statement)
+- [Key Visuals in the Power BI Dashboard](#key-visuals-in-the-power-bi-dashboard)
+- [Key Insights](#key-insights)
+- [Tools and Technologies](#tools-and-technologies)
+- [Database Structure](#database-structure)
+- [Key Features](#key-features)
+- [How to Run the Project](#how-to-run-the-project)
+- [Access Full Documentation](#access-full-documentation)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ________________________________________
 📚 
 ## Project Overview
