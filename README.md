@@ -75,8 +75,8 @@ ________________________________________
 ________________________________________
 🗄️ 
 ## Database Structure
--	Database Name: world_layoffs
--	Table Used: layoffs_staging2 (fully cleaned and standardized)
+-	Database Name: **`world_layoffs`**
+-	Table Used: **`layoffs_staging2`** (fully cleaned and standardized)
 ________________________________________
 ⚙️ 
 ## Key Features
