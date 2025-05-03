@@ -1,5 +1,5 @@
 💻 
-# Layoffs Data Cleaning and Exploratory Data Analysis (EDA) using SQL
+# Layoffs Data Analysis
  
  
 ________________________________________
