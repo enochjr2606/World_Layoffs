@@ -1,5 +1,5 @@
 /* 
-  -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 Data cleaning process for the layoffs dataset:
 - Create backup tables to preserve original data.
 - Identify and remove duplicate records using ROW_NUMBER().
@@ -8,9 +8,7 @@ Data cleaning process for the layoffs dataset:
 - Handle NULL and blank values by updating or deleting records as needed.
 - Drop helper columns used during the cleaning process.
 This ensures a clean, consistent dataset ready for analysis.
-
-AUTHOR: [Nuhu Enoch]
-  -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 */
 
 -- DATA CLEANING --
