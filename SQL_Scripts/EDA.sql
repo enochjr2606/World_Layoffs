@@ -1,14 +1,11 @@
 
 /* 
-  -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 EXPLORATORY DATA ANALYSIS (EDA) on the 'layoffs_staging2' table to understand layoffs trends and statistics
 across various categories.
 These queries provide insights into the scale, trends, and key contributors to layoffs over time and across
 different groups.
-
-
-AUTHOR: [Nuhu Enoch]
-  -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 */
 
 -- Display all records from the layoffs_staging2 table
