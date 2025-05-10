@@ -18,7 +18,7 @@
 ________________________________________
 📚 
 ## Project Overview
-This project designed to analyze and visualize data on layoffs across various companies and industries. The primary goal is to provide insights into trends, patterns, and underlying factors influencing layoffs, allowing decision-makers to understand the broader impact on the workforce. It focuses on cleaning and analyzing the global layoffs dataset using SQL. The goal is to transform messy real-world data into a structured format and perform deep exploratory analysis to uncover valuable business insights.
+This project is designed to analyze and visualize data on layoffs across various companies and industries. The primary goal is to provide insights into trends, patterns, and underlying factors influencing layoffs, allowing decision-makers to understand the broader impact on the workforce. It focuses on cleaning and analyzing the global layoffs dataset using SQL. The goal is to transform messy real-world data into a structured format and perform deep exploratory analysis to uncover valuable business insights.
 ________________________________________
 ❗
 ## Problem Statement
